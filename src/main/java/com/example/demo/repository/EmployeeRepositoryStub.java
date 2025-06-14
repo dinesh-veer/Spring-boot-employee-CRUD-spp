@@ -3,7 +3,9 @@ package com.example.demo.repository;
 import java.util.ArrayList;
 
 import com.example.demo.model.Employee;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class EmployeeRepositoryStub implements EmployeeRepository {
 
 	private static ArrayList<Employee> employee=new ArrayList<>();

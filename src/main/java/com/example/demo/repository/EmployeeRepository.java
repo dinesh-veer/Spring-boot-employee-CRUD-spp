@@ -6,5 +6,5 @@ import com.example.demo.model.Employee;
 
 public interface EmployeeRepository {
 
-	public ArrayList<Employee> getAllEmployee();
+	ArrayList<Employee> getAllEmployee();
 }
