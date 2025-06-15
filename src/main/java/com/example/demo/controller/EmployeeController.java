@@ -7,11 +7,10 @@ import org.springframework.web.bind.annotation.*;
 import com.example.demo.model.Employee;
 import com.example.demo.service.EmployeeService;
 
-import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping(path="/api/employee")
-
 public class EmployeeController {
 
 	EmployeeService employeeService;
@@ -21,7 +20,7 @@ public class EmployeeController {
 	}
 
 	@GetMapping
-	public ArrayList<Employee> getAllEmployee() {
+	public List<Employee> getAllEmployee() {
 		return employeeService.getEmployee();
 	}
 
@@ -31,7 +30,7 @@ public class EmployeeController {
 				.map(ResponseEntity::ok)
 				.orElse(ResponseEntity.notFound().build());
 	}
-	@PostMapping(path = "create")
+	@PostMapping
 	public ResponseEntity<HttpStatus> addEmployee(@RequestBody Employee employee) {
 		employeeService.create(employee);
 		return ResponseEntity.status(HttpStatus.CREATED.value()).build();
@@ -43,9 +42,9 @@ public class EmployeeController {
 		return result != null ? ResponseEntity.ok(result) : ResponseEntity.notFound().build();
 	}
 
-	@DeleteMapping(path = ":employeeId")
-	public ResponseEntity<HttpStatus> deleteEmployee(@RequestParam("employeeId") int employeeId) {
-		 employeeService.removeEmployee(employeeId);
+	@DeleteMapping(path = "/{id}")
+	public ResponseEntity<HttpStatus> deleteEmployee(@PathVariable Long id) {
+		 employeeService.removeEmployee(id);
 		return ResponseEntity.status(HttpStatus.ACCEPTED.value()).build();
 	}
 	

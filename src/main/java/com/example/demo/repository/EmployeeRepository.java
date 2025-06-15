@@ -1,14 +1,7 @@
 package com.example.demo.repository;
 
-import java.util.ArrayList;
-
 import com.example.demo.model.Employee;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface EmployeeRepository {
-
-	ArrayList<Employee> getAllEmployee();
-
-	void create(Employee employee);
-
-	void removeEmployee(int employeeId);
+public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 }

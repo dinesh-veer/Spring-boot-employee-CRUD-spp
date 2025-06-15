@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import com.example.demo.model.Employee;
@@ -8,11 +9,11 @@ import io.micrometer.observation.ObservationFilter;
 
 public interface EmployeeService {
 
-	ArrayList<Employee> getEmployee();
+	List<Employee> getEmployee();
 
-	void create(Employee employee);
+	Employee create(Employee employee);
 
-	void removeEmployee(int employeeId);
+	void removeEmployee(Long employeeId);
 
 	Optional<Employee> getEmployeeById(Long id);
 
