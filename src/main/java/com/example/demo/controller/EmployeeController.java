@@ -10,7 +10,7 @@ import com.example.demo.service.EmployeeService;
 import java.util.ArrayList;
 
 @RestController
-@RequestMapping(path="/employee/api/")
+@RequestMapping(path="/api/employee")
 
 public class EmployeeController {
 
@@ -20,17 +20,29 @@ public class EmployeeController {
 		this.employeeService=employeeService;
 	}
 
+	@GetMapping
+	public ArrayList<Employee> getAllEmployee() {
+		return employeeService.getEmployee();
+	}
+
+	@GetMapping({"/{id}"})
+	public ResponseEntity<Employee> getEmployeeById(@PathVariable Long id) {
+		return employeeService.getEmployeeById(id)
+				.map(ResponseEntity::ok)
+				.orElse(ResponseEntity.notFound().build());
+	}
 	@PostMapping(path = "create")
 	public ResponseEntity<HttpStatus> addEmployee(@RequestBody Employee employee) {
 		employeeService.create(employee);
 		return ResponseEntity.status(HttpStatus.CREATED.value()).build();
 	}
 
-	
-	@GetMapping(path="get")
-	public ArrayList<Employee> getAllEmployee() {
-		return employeeService.getEmployee();
+	@PutMapping("/{id}")
+	public ResponseEntity<Employee> updateEmployee(@PathVariable Long id, @RequestBody Employee updatedEmployee) {
+		Employee result = employeeService.updateEmployee(id, updatedEmployee);
+		return result != null ? ResponseEntity.ok(result) : ResponseEntity.notFound().build();
 	}
+
 	@DeleteMapping(path = ":employeeId")
 	public ResponseEntity<HttpStatus> deleteEmployee(@RequestParam("employeeId") int employeeId) {
 		 employeeService.removeEmployee(employeeId);
