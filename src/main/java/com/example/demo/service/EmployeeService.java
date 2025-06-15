@@ -9,4 +9,6 @@ public interface EmployeeService {
 	ArrayList<Employee> getEmployee();
 
 	void create(Employee employee);
+
+	void removeEmployee(int employeeId);
 }

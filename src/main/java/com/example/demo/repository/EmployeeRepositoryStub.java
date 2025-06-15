@@ -1,6 +1,8 @@
 package com.example.demo.repository;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.stream.Collectors;
 
 import com.example.demo.model.Employee;
 import org.springframework.stereotype.Repository;
@@ -40,6 +42,12 @@ public class EmployeeRepositoryStub implements EmployeeRepository {
 	public void create(Employee employee) {
 		 EmployeeRepositoryStub.employee.add(employee);
 		 return;
+	}
+
+	@Override
+	public void removeEmployee(int employeeId) {
+		employee = (ArrayList<Employee>) employee.stream().filter(employee1 -> employee1.getEmplyeeId()!=employeeId).collect(Collectors.toList());
+		return;
 	}
 
 }

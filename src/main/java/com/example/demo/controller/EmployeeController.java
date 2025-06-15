@@ -31,5 +31,10 @@ public class EmployeeController {
 	public ArrayList<Employee> getAllEmployee() {
 		return employeeService.getEmployee();
 	}
+	@DeleteMapping(path = ":employeeId")
+	public ResponseEntity<HttpStatus> deleteEmployee(@RequestParam("employeeId") int employeeId) {
+		 employeeService.removeEmployee(employeeId);
+		return ResponseEntity.status(HttpStatus.ACCEPTED.value()).build();
+	}
 	
 }

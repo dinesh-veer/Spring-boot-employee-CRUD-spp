@@ -9,4 +9,6 @@ public interface EmployeeRepository {
 	ArrayList<Employee> getAllEmployee();
 
 	void create(Employee employee);
+
+	void removeEmployee(int employeeId);
 }
