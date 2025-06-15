@@ -7,4 +7,6 @@ import com.example.demo.model.Employee;
 public interface EmployeeRepository {
 
 	ArrayList<Employee> getAllEmployee();
+
+	void create(Employee employee);
 }

@@ -36,4 +36,10 @@ public class EmployeeRepositoryStub implements EmployeeRepository {
 		return EmployeeRepositoryStub.employee;
 	}
 
+	@Override
+	public void create(Employee employee) {
+		 EmployeeRepositoryStub.employee.add(employee);
+		 return;
+	}
+
 }

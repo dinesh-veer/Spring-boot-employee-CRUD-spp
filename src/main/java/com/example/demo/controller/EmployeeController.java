@@ -1,7 +1,8 @@
 package com.example.demo.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import com.example.demo.model.Employee;
 import com.example.demo.service.EmployeeService;
@@ -19,8 +20,14 @@ public class EmployeeController {
 		this.employeeService=employeeService;
 	}
 
+	@PostMapping(path = "create")
+	public ResponseEntity<HttpStatus> addEmployee(@RequestBody Employee employee) {
+		employeeService.create(employee);
+		return ResponseEntity.status(HttpStatus.CREATED.value()).build();
+	}
+
 	
-	@RequestMapping(path="get")
+	@GetMapping(path="get")
 	public ArrayList<Employee> getAllEmployee() {
 		return employeeService.getEmployee();
 	}
