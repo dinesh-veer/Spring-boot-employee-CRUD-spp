@@ -1,6 +1,4 @@
 
-
-```markdown
 # 🧑‍💼 Employee CRUD Application with Spring Boot & H2
 
 This is a simple **CRUD REST API** for managing employee records built using **Spring Boot**, **Spring Data JPA**, and an **H2 in-memory database**.
@@ -29,7 +27,7 @@ This is a simple **CRUD REST API** for managing employee records built using **S
 
 ## 📁 Project Structure
 
-
+```
 
 src/
 ├── main/
@@ -71,7 +69,7 @@ spring.jpa.hibernate.ddl-auto=update
 ## 📡 REST API Endpoints
 
 | Method | Endpoint              | Description           |
-| ------ | --------------------- | --------------------- |
+|--------|-----------------------|-----------------------|
 | GET    | `/api/employees`      | Get all employees     |
 | GET    | `/api/employees/{id}` | Get employee by ID    |
 | POST   | `/api/employees`      | Create new employee   |
@@ -166,4 +164,4 @@ curl -X POST http://localhost:8080/api/employees \
 
 This project is licensed under the [MIT License](LICENSE).
 
-```
+---
