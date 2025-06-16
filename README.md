@@ -167,8 +167,3 @@ curl -X POST http://localhost:8080/api/employees \
 This project is licensed under the [MIT License](LICENSE).
 
 ```
-
----
-
-Let me know if you'd like to include Swagger for API docs or split the entity into DTOs for cleaner design!
-```
