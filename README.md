@@ -131,6 +131,18 @@ Then open: [http://localhost:8080/h2-console](http://localhost:8080/h2-console)
 
 ---
 
+## 📖 API Documentation (Swagger)
+
+Interactive API docs are available using Swagger UI:
+
+- URL: [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+
+You can use the interface to:
+- Explore all endpoints
+- Test API requests directly
+- View request/response schemas
+---
+
 ## 🧪 Testing
 
 You can use **Postman**, **curl**, or any HTTP client.
