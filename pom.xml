@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>Starter-Stub</artifactId>
+	<artifactId>Spring-boot-employee-CRUD-spp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Starter-Stub</name>
 	<description>Demo project for Spring Boot</description>
