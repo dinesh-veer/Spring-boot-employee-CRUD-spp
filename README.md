@@ -40,8 +40,8 @@ src/
 │   │       └── EmployeeCrudApplication.java
 │   └── resources/
 │       ├── application.properties  # H2 config and JPA settings
-│       └── data.sql (optional)     # Initial data if needed
-
+│       └── data.sql      # Initial data loading
+|       └── schema.sql    # Schema for tables loading
 ````
 
 ---
