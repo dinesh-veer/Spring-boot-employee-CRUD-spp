@@ -165,3 +165,15 @@ curl -X POST http://localhost:8080/api/employees \
 This project is licensed under the [MIT License](LICENSE).
 
 ---
+
+## 📬 Contact
+
+For questions, feedback, or collaboration:
+
+**Dinesh Veer**
+
+📧 Email: [dveer123@hotmail.com](mailto:dveer123@hotmail.com)
+
+🔗 GitHub: [@dinesh-veer](https://github.com/dinesh-veer)
+
+---
